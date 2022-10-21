@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 16:44:55 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 18:16:12 by arurangi         ###   ########.fr       */
+/*   Created: 2022/10/03 15:15:58 by arurangi          #+#    #+#             */
+/*   Updated: 2022/10/21 14:39:54 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+/*
+ * Calculates length of a given string
+*/
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <limits.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s);
-void	ft_putchar(char c);
-void	ft_putnbr(int nbr);
-void	ft_putstr(char *str);
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}

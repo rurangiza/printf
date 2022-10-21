@@ -6,32 +6,68 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:49:26 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 17:32:34 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:13:57 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-#include <stdio.h>
 
-// va_start, va_arg, va_end
-
-int	ft_printf(const char *, ...)
+int	ft_printf(const char *str, ...)
 {
-	// if %c, replace with char variable
-	// if %s, replace with string variable 
-	// if %p, replace with 
+	// Length of str
 	va_list args;
-
-	va_start(args, *);
+	int	i;
+	
+	// Invoke va_list
+	va_start(args, str);
+	// Access the arguments one at a time
+	i = 0;
+	while(str[i])
+	{
+		if (str[i] == '%')
+		{
+			print_variables(str[i + 1], args);
+			i++;
+		}
+		else
+			ft_putchar(str[i]);
+		i++;
+	}
+	va_end(args);
+	return (1);
 }
-// What are variadic functions?
-// How can I print a single character -> {%c}
+
+void	print_variables(char ch, va_list args)
+{
+	
+	if (ch == 'c')
+	{
+		// Do this
+	}
+	else if (ch == 's')
+	{
+		// Do this
+	}
+	else if (ch == 'd' || ch == 'i')
+		ft_putnbr(va_arg(args, int));
+	else if (ch == '%' && ch == 'u')
+	{
+		// Do this
+	}
+}
 
 int main(void)
-{ 
-	//ft_printf("", a, h);
-	int a = 42;
-	int *ptr = &a;
-	printf("%p\n", ptr);
+{
+	ft_printf("I want %d apples\n", 5);
 	return (0);
 }
+
+// Iterate in {str} looking for '%' symbol
+	// found %
+		// Check follows character
+			// if it's : %c, %s, %i %d, %u, %%, %x, %X ou %p
+				// Include content in string
+			// if no such letters
+				// just print string
+	// not found
+		// Print string

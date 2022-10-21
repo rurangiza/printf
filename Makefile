@@ -6,7 +6,7 @@
 #    By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 16:44:59 by arurangi          #+#    #+#              #
-#    Updated: 2022/10/20 16:52:22 by arurangi         ###   ########.fr        #
+#    Updated: 2022/10/21 16:43:48 by arurangi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME =		libftprintf.a
 OBJS =		${SRCS:.c=.o}
 
 FLAGS =		-Wall -Wextra -Werror 
-CC =		gcc
+CC =		gcc ${FLAGS}
 RM =		rm -f
 
 all:		${NAME}

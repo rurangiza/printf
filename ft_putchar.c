@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 16:44:55 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 18:16:12 by arurangi         ###   ########.fr       */
+/*   Created: 2022/10/07 17:04:13 by arurangi          #+#    #+#             */
+/*   Updated: 2022/10/21 18:13:09 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+/*
+ * Outputs the character {c} to the given file descriptor {fd}
+*/
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <limits.h>
+#include "libftprintf.h"
 
-size_t	ft_strlen(const char *s);
-void	ft_putchar(char c);
-void	ft_putnbr(int nbr);
-void	ft_putstr(char *str);
-
-#endif
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
