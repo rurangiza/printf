@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:15:53 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 18:17:09 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:55:14 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_putstr(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		ft_putchar_fd(str[i]);
+		ft_putchar(str[i]);
 		i++;
 	}
 }
