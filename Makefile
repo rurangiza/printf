@@ -6,7 +6,7 @@
 #    By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 16:44:59 by arurangi          #+#    #+#              #
-#    Updated: 2022/10/22 13:49:52 by arurangi         ###   ########.fr        #
+#    Updated: 2022/10/22 16:31:29 by arurangi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ SRCS =		ft_printf.c \
 			ft_putstr.c \
 			ft_putnbr.c \
 			ft_putnbr_u.c \
-			ft_putnbr_base.c \
 			ft_putnbr_base_u.c \
 			
 
@@ -28,7 +27,7 @@ FLAGS =		-Wall -Wextra -Werror
 CC =		gcc ${FLAGS}
 RM =		rm -f
 
-all:		${NAME}
+# all:		${NAME}
 
 ${NAME} :	${OBJS}
 				ar rcs ${NAME} ${OBJS}

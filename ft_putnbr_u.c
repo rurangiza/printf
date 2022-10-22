@@ -6,13 +6,13 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 11:50:24 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/22 13:49:14 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/22 17:09:33 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_u(unsigned int nbr)
+int	ft_putnbr_u(unsigned int nbr)
 {
 	char			ch;
 	
@@ -26,4 +26,5 @@ void	ft_putnbr_u(unsigned int nbr)
 		ch = nbr + '0';
 		ft_putchar(ch);
 	}
+	return (ft_nbrlen(nbr))
 }

@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 09:15:53 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/22 17:01:52 by arurangi         ###   ########.fr       */
+/*   Created: 2022/10/22 17:03:10 by arurangi          #+#    #+#             */
+/*   Updated: 2022/10/22 17:09:00 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
- * Outputs the string {str} to the given file descriptor {fd}
+ * Find length of a number
 */
 
-#include "ft_printf.h"
-
-int	ft_putstr(char *str)
+int	ft_nbrlen(int nbr)
 {
-	int	i;
+	int	counter;
 
-	if (!str)
-		return (0);
-	i = 0;
-	while (str[i] != '\0')
+	counter = 0;
+	if (nbr == 0)
+		return (1);
+	if (nbr < 0)
+		counter++;
+	while (nbr != 0)
 	{
-		ft_putchar(str[i]);
-		i++;
-	}
-	return (i);
+		counter++;
+		nbr = nbr / 10;
+	}	
+	return (counter);
 }

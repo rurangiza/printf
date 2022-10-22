@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:32:11 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/22 13:49:23 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/22 17:09:19 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int nbr)
+int	ft_putnbr(int nbr)
 {
 	char			ch;
-	//unsigned int	u_nbr;
-
+	
 	if (nbr > 9)
 	{
 		ft_putnbr((nbr / 10));
@@ -41,4 +40,11 @@ void	ft_putnbr(int nbr)
 		ch = nbr + '0';
 		ft_putchar(ch);
 	}
+	return (ft_nbrlen(nbr));
 }
+
+// #include <stdio.h>
+// int main(void)
+// {
+// 	printf("\nLength: %d\n", ft_putnbr(248598585));
+// }
