@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr_base_u.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 18:54:34 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/22 12:04:22 by arurangi         ###   ########.fr       */
+/*   Created: 2022/10/22 12:33:02 by arurangi          #+#    #+#             */
+/*   Updated: 2022/10/22 13:28:34 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@
 // 	return (i);
 // }
 
-long	condition(char *base, long i);
-long	no_error(char *base);
+static unsigned int	condition(char *base, unsigned int i);
+static unsigned int	no_error(char *base);
 
-void	ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_base_u(unsigned int nbr, char *base)
 {
 	char	ch;
-	long	l_nbr;
-	long	base_len;
+	unsigned int	l_nbr;
+	unsigned int	base_len;
 
 	l_nbr = nbr;
-	base_len = (long)ft_strlen(base);
+	base_len = (unsigned int)ft_strlen(base);
 	if (no_error(base))
 	{
 		if (l_nbr < 0)
@@ -54,9 +54,9 @@ void	ft_putnbr_base(int nbr, char *base)
 }
 
 // Check for input errors: returns 1 if there is no error, and 0 otherwise
-long	no_error(char *base)
+static unsigned int	no_error(char *base)
 {
-	long	i;
+	unsigned int	i;
 
 	if (ft_strlen(base) <= 1)
 		return (0);
@@ -75,9 +75,9 @@ long	no_error(char *base)
 	return (1);
 }
 
-long	condition(char *base, long i)
+static unsigned int	condition(char *base, unsigned int i)
 {
-	long	j;
+	unsigned int	j;
 
 	j = 0;
 	while (base[j] != '\0')

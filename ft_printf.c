@@ -6,21 +6,20 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:49:26 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 19:06:39 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/22 13:31:35 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
+void	print_variables(char ch, va_list args);
+
 int	ft_printf(const char *str, ...)
 {
-	// Length of str
 	va_list args;
 	int	i;
 	
-	// Invoke va_list
 	va_start(args, str);
-	// Access the arguments one at a time
 	i = 0;
 	while(str[i])
 	{
@@ -39,35 +38,32 @@ int	ft_printf(const char *str, ...)
 
 void	print_variables(char ch, va_list args)
 {
-	
-	if (ch == 'c') // Prints a single character
-		ft_putchar(va_arg(args, char));
-	else if (ch == 's') // Prints a string (as defined by the common C convention)
+	if (ch == 'c')
+		ft_putchar(va_arg(args, int));
+	else if (ch == 's')
 		ft_putstr(va_arg(args, char *));
-	else if (ch == 'i' || ch == 'd') // Prints an integer {i} or decimal {d} in base 10
+	else if (ch == 'i' || ch == 'd')
 		ft_putnbr(va_arg(args, int));
-	else if (ch == 'u') // Prints an unsigned decimal (base 10) number
-		ft_putnbr(va_arg(args, unsigned int));
-	else if (ch == '%') // Prints a percent sign
+	else if (ch == 'u')
+		ft_putnbr_u(va_arg(args, unsigned int));
+	else if (ch == '%')
 		ft_putchar('%');
-	else if (ch == 'x') // Prints a number in hexadecimal (base 16) lowercase format
-		ft_putnbr_base(va_arg(args, int));
-	else if (ch == 'X') // Prints a number in hexadecimal (base 16) uppercase format
-	else if (ch == 'p') // Print address of variable
+	else if (ch == 'x')
+		ft_putnbr_base(va_arg(args, int), "0123456789abcdef");
+	else if (ch == 'X')
+		ft_putnbr_base(va_arg(args, int), "0123456789ABCDEF");
+	else if (ch == 'p')
+	{
+		ft_putstr("0x");
+		ft_putnbr_base_u(va_arg(args, unsigned int), "0123456789abcdef");
+	}
 }
 
+#include <stdio.h>
 int main(void)
 {
-	ft_printf("I want %d apples\n", 5);
+	int a = 45;
+	ft_printf("ft_print : %p\n", &a);
+	printf("printf   : %p\n", &a);
 	return (0);
 }
-
-// Iterate in {str} looking for '%' symbol
-	// found %
-		// Check follows character
-			// if it's : %c, %s, %i %d, %u, %%, %x, %X ou %p
-				// Include content in string
-			// if no such letters
-				// just print string
-	// not found
-		// Print string
