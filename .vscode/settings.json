@@ -1,6 +1,7 @@
 {
 	"files.associations": {
 		"chrono": "c",
-		"libftprintf.h": "c"
+		"libftprintf.h": "c",
+		"unistd.h": "c"
 	}
 }

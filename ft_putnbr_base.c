@@ -6,11 +6,11 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 18:54:34 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/22 12:04:22 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/22 13:49:05 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 // long	ft_strlen(char *str)
 // {

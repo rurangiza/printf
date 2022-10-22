@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:15:53 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 18:55:14 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/22 13:49:28 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
  * Outputs the string {str} to the given file descriptor {fd}
 */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	ft_putstr(char *str)
 {

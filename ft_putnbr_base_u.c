@@ -6,46 +6,29 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:33:02 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/22 13:28:34 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/22 14:33:36 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-// long	ft_strlen(char *str)
-// {
-// 	long	i;
+static unsigned long long	condition(char *base, unsigned long long i);
+static unsigned long long	no_error(char *base);
 
-// 	i = 0;
-// 	while (str[i] != '\0')
-// 		i++;
-// 	return (i);
-// }
-
-static unsigned int	condition(char *base, unsigned int i);
-static unsigned int	no_error(char *base);
-
-void	ft_putnbr_base_u(unsigned int nbr, char *base)
+void	ft_putnbr_base_u(unsigned long long l_nbr, char *base)
 {
 	char	ch;
-	unsigned int	l_nbr;
-	unsigned int	base_len;
+	unsigned long long	base_len;
 
-	l_nbr = nbr;
-	base_len = (unsigned int)ft_strlen(base);
+	base_len = (unsigned long long)ft_strlen(base);
 	if (no_error(base))
 	{
-		if (l_nbr < 0)
-		{
-			write(1, "-", 1);
-			l_nbr = l_nbr * (-1);
-		}
 		if (l_nbr > base_len - 1)
 		{
-			ft_putnbr_base(l_nbr / base_len, base);
-			ft_putnbr_base(l_nbr % base_len, base);
+			ft_putnbr_base_u(l_nbr / base_len, base);
+			ft_putnbr_base_u(l_nbr % base_len, base);
 		}
-		else if (l_nbr >= 0 && l_nbr < base_len)
+		else
 		{
 			ch = base[l_nbr];
 			write(1, &ch, 1);
@@ -53,10 +36,9 @@ void	ft_putnbr_base_u(unsigned int nbr, char *base)
 	}
 }
 
-// Check for input errors: returns 1 if there is no error, and 0 otherwise
-static unsigned int	no_error(char *base)
+static unsigned long long	no_error(char *base)
 {
-	unsigned int	i;
+	unsigned long long	i;
 
 	if (ft_strlen(base) <= 1)
 		return (0);
@@ -75,9 +57,9 @@ static unsigned int	no_error(char *base)
 	return (1);
 }
 
-static unsigned int	condition(char *base, unsigned int i)
+static unsigned long long	condition(char *base, unsigned long long i)
 {
-	unsigned int	j;
+	unsigned long long	j;
 
 	j = 0;
 	while (base[j] != '\0')

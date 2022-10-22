@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:44:55 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/22 13:28:39 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/22 14:15:11 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putchar(char c);
 void	ft_putnbr(int nbr);
 void	ft_putnbr_u(unsigned int nbr);
 void	ft_putnbr_base(int nbr, char *base);
-void	ft_putnbr_base_u(unsigned int nbr, char *base);
+void	ft_putnbr_base_u(unsigned long long nbr, char *base);
 void	ft_putstr(char *str);
 
 #endif

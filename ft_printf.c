@@ -6,11 +6,11 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:49:26 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/22 13:31:35 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/22 14:20:59 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	print_variables(char ch, va_list args);
 
@@ -49,13 +49,13 @@ void	print_variables(char ch, va_list args)
 	else if (ch == '%')
 		ft_putchar('%');
 	else if (ch == 'x')
-		ft_putnbr_base(va_arg(args, int), "0123456789abcdef");
+		ft_putnbr_base(va_arg(args, int), "0123456789abcdef"); // unsigned int
 	else if (ch == 'X')
-		ft_putnbr_base(va_arg(args, int), "0123456789ABCDEF");
+		ft_putnbr_base(va_arg(args, int), "0123456789ABCDEF"); // unsigned int
 	else if (ch == 'p')
 	{
 		ft_putstr("0x");
-		ft_putnbr_base_u(va_arg(args, unsigned int), "0123456789abcdef");
+		ft_putnbr_base_u(va_arg(args, unsigned long long), "0123456789abcdef");
 	}
 }
 
