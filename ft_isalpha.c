@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 17:03:10 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/23 13:51:33 by arurangi         ###   ########.fr       */
+/*   Created: 2022/10/03 14:50:57 by arurangi          #+#    #+#             */
+/*   Updated: 2022/10/21 11:46:07 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
- * Find length of a number
+ * Checks whether a character is an alphabet or not
+ *
+ * Returns : (1) = yes, (0) = no
 */
 
-int	ft_nbrlen(int nbr)
+int	ft_isalpha(int c)
 {
-	int	counter;
-
-	counter = 0;
-	if (nbr == 0)
+	if ((c >= 65 && c <= 90) || ((c >= 97 && c <= 122)))
 		return (1);
-	if (nbr < 0)
-		counter++;
-	while (nbr != 0)
-	{
-		counter++;
-		nbr = nbr / 10;
-	}	
-	return (counter);
+	return (0);
 }

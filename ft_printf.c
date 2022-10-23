@@ -6,36 +6,37 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:49:26 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/23 14:17:21 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/23 16:25:01 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+//#include <stdio.h>
 
 static void	print_variables(char ch, va_list args, int *counter);
 
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	int		i;
+	int		index;
 	int		counter;
 
 	counter = 0;
 	va_start(args, str);
-	i = 0;
-	while (str[i])
+	index = 0;
+	while (str[index])
 	{
-		if (str[i] == '%')
+		if (str[index] == '%')
 		{
-			print_variables(str[i + 1], args, &counter);
-			i++;
+			print_variables(str[index + 1], args, &counter);
+			index++;
 		}
 		else
 		{
-			ft_putchar(str[i]);
+			ft_putchar(str[index]);
 			counter++;
 		}
-		i++;
+		index++;
 	}
 	va_end(args);
 	return (counter);
@@ -53,32 +54,26 @@ static void	print_variables(char ch, va_list args, int *counter)
 		*counter = ft_putnbr_u(va_arg(args, unsigned int), counter);
 	else if (ch == '%')
 		*counter += ft_putchar('%');
-	else if (ch == 'x')
-		ft_putnbr_base_u(va_arg(args, unsigned int),
-			"0123456789abcdef", counter);
-	else if (ch == 'X')
-		ft_putnbr_base_u(va_arg(args, unsigned int),
-			"0123456789ABCDEF", counter);
+	else if (ch == 'x' || ch == 'X')
+		ft_ntohex(va_arg(args, unsigned int), ch, counter);
 	else if (ch == 'p')
 	{
 		ft_putstr("0x");
-		ft_putnbr_base_u(va_arg(args, unsigned long),
-			"0123456789abcdef", counter);
+		ft_ntohex(va_arg(args, unsigned long), ch, counter);
 		*counter += 2;
 	}
 }
 
-// #include <stdio.h>
 // int main(void)
 // {
 // 	//int a = 11;
 // 	printf(
 // 		"\nLen = %d\n\n",
-// 		ft_printf("\n%d\n", INT_MIN)
+// 		ft_printf("\n%p\n", -1)
 // 	);
-// 	printf(
-// 		"\nLen = %d\n\n",
-// 		printf("\n%d\n", INT_MIN)
-// 	);
+// 	// printf(
+// 	// 	"\nLen = %d\n\n",
+// 	// 	printf("\n%p\n", -14556)
+// 	// );
 // 	return (0);
 // }

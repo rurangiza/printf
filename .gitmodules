@@ -1,6 +1,0 @@
-[submodule "printfTester"]
-	path = printfTester
-	url = https://github.com/Tripouille/printfTester.git
-[submodule "_printfTester"]
-	path = _printfTester
-	url = https://github.com/Tripouille/printfTester.git
