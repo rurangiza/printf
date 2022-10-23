@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 11:50:24 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/22 17:09:33 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/22 20:09:14 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int	ft_putnbr_u(unsigned int nbr)
 		ch = nbr + '0';
 		ft_putchar(ch);
 	}
-	return (ft_nbrlen(nbr))
+	return (ft_nbrlen(nbr));
 }

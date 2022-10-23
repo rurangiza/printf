@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:49:26 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/22 17:20:09 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/23 09:20:45 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_variables(char ch, va_list args);
+static void print_variables(char ch, va_list args, int *counter);
 
-int	ft_printf(const char *str, ...)
+int ft_printf(const char *str, ...)
 {
 	va_list args;
-	int	i;
+	int i;
 	int counter;
-	
+
 	counter = 0;
 	va_start(args, str);
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] == '%')
 		{
@@ -31,43 +31,50 @@ int	ft_printf(const char *str, ...)
 			i++;
 		}
 		else
+		{
 			ft_putchar(str[i]);
+			counter++;
+		}
 		i++;
 	}
 	va_end(args);
-	return (i);
-}
-
-int	print_variables(char ch, va_list args, int *counter)
-{
-	if (ch == 'c')
-		counter = ft_putchar(va_arg(args, int));
-	else if (ch == 's')
-		counter = ft_putstr(va_arg(args, char *));
-	else if (ch == 'i' || ch == 'd')
-		counter = ft_putnbr(va_arg(args, int));
-	else if (ch == 'u')
-		counter = ft_putnbr_u(va_arg(args, unsigned int));
-	else if (ch == '%')
-		counter = ft_putchar('%');
-	else if (ch == 'x')
-		ft_putnbr_base_u(va_arg(args, unsigned int), "0123456789abcdef", &counter);
-	else if (ch == 'X')
-		ft_putnbr_base_u(va_arg(args, unsigned int), "0123456789ABCDEF", &counter);
-	else if (ch == 'p')
-	{
-		ft_putstr("0x");
-		ft_putnbr_base_u(va_arg(args, unsigned long), "0123456789abcdef", &counter);
-		counter += 2;
-	}
 	return (counter);
 }
 
-// #include <stdio.h>
-// int main(void)
-// {
-// 	int a = 45;
-// 	//ft_printf("ft_print : %p\n", &a);
-// 	ft_printf("This is %s\n","Arsene");
-// 	return (0);
-// }
+static void print_variables(char ch, va_list args, int *counter)
+{
+	if (ch == 'c')
+		*counter += ft_putchar(va_arg(args, int));
+	else if (ch == 's')
+		*counter += ft_putstr(va_arg(args, char *));
+	else if (ch == 'i' || ch == 'd')
+		*counter += ft_putnbr(va_arg(args, int));
+	else if (ch == 'u')
+		*counter += ft_putnbr_u(va_arg(args, unsigned int));
+	else if (ch == '%')
+		*counter += ft_putchar('%');
+	else if (ch == 'x')
+		*counter += ft_putnbr_base_u(va_arg(args, unsigned int), "0123456789abcdef");
+	else if (ch == 'X')
+		*counter += ft_putnbr_base_u(va_arg(args, unsigned int), "0123456789ABCDEF");
+	else if (ch == 'p')
+	{
+		ft_putstr("0x");
+		*counter += ft_putnbr_base_u(va_arg(args, unsigned long), "0123456789abcdef");
+	}
+}
+
+#include <stdio.h>
+int main(void)
+{
+	int a = 11;
+	printf(
+		"\nLen = %d\n\n",
+		ft_printf("\nHi, %s my name is %x\n", "Arsene", a)
+	);
+	printf(
+		"\nLen = %d\n\n",
+		printf("\nHi, %s my name is %x\n", "Arsene", a)
+	);
+	return (0);
+}

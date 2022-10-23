@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base_u.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:33:02 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/22 17:17:11 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/23 07:01:52 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 static unsigned long	condition(char *base, unsigned long i);
 static unsigned long	no_error(char *base);
 
-void	ft_putnbr_base_u(unsigned long nbr, char *base, int *counter)
+static int count = 1;
+
+int	ft_putnbr_base_u(unsigned long nbr, char *base)
 {
-	char	ch;
+	char			ch;
 	unsigned long	base_len;
 
 	base_len = ft_strlen(base);
@@ -25,16 +27,18 @@ void	ft_putnbr_base_u(unsigned long nbr, char *base, int *counter)
 	{
 		if (nbr > base_len - 1)
 		{
+			count++;
 			ft_putnbr_base_u(nbr / base_len, base);
 			ft_putnbr_base_u(nbr % base_len, base);
 		}
 		else
 		{
-			*counter++;
+			//count++;
 			ch = base[nbr];
 			write(1, &ch, 1);
 		}
 	}
+	return (count);
 }
 
 static unsigned long	no_error(char *base)

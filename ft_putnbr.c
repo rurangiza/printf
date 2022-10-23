@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:32:11 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/22 17:09:19 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/23 06:07:59 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,3 @@ int	ft_putnbr(int nbr)
 	}
 	return (ft_nbrlen(nbr));
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-// 	printf("\nLength: %d\n", ft_putnbr(248598585));
-// }
