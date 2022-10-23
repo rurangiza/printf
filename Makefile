@@ -6,7 +6,7 @@
 #    By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 16:44:59 by arurangi          #+#    #+#              #
-#    Updated: 2022/10/23 12:21:28 by arurangi         ###   ########.fr        #
+#    Updated: 2022/10/23 14:42:13 by arurangi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ OBJS =		${SRCS:.c=.o}
 FLAGS =		-Wall -Wextra -Werror 
 CC =		gcc ${FLAGS}
 RM =		rm -f
+RMT =		rmdir _printfTester
 
 ${NAME} :	${OBJS}
 				ar rcs ${NAME} ${OBJS}
@@ -45,3 +46,6 @@ fclean:		clean
 re:			fclean all
 
 .PHONY:		all clean fclean re
+
+test:
+	git submodule add https://github.com/Tripouille/printfTester.git _printfTester
