@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base_u.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
+/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:33:02 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/23 07:01:52 by Arsene           ###   ########.fr       */
+/*   Updated: 2022/10/23 11:32:24 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 static unsigned long	condition(char *base, unsigned long i);
 static unsigned long	no_error(char *base);
 
-static int count = 1;
-
-int	ft_putnbr_base_u(unsigned long nbr, char *base)
+int	ft_putnbr_base_u(unsigned long nbr, char *base, int *counter)
 {
 	char			ch;
 	unsigned long	base_len;
@@ -27,18 +25,17 @@ int	ft_putnbr_base_u(unsigned long nbr, char *base)
 	{
 		if (nbr > base_len - 1)
 		{
-			count++;
-			ft_putnbr_base_u(nbr / base_len, base);
-			ft_putnbr_base_u(nbr % base_len, base);
+			ft_putnbr_base_u(nbr / base_len, base, counter);
+			ft_putnbr_base_u(nbr % base_len, base, counter);
 		}
 		else
 		{
-			//count++;
+			(*counter)++;
 			ch = base[nbr];
 			write(1, &ch, 1);
 		}
 	}
-	return (count);
+	return (*counter);
 }
 
 static unsigned long	no_error(char *base)

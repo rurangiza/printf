@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
+/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:44:55 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/23 06:59:11 by Arsene           ###   ########.fr       */
+/*   Updated: 2022/10/23 11:29:49 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_putchar(char c);
 int		ft_putstr(char *str);
 int		ft_putnbr(int nbr);
 int		ft_putnbr_u(unsigned int nbr);
-int	    ft_putnbr_base_u(unsigned long nbr, char *base);
+int	    ft_putnbr_base_u(unsigned long nbr, char *base, int *counter);
 int		ft_nbrlen(int nbr);
 
 #endif

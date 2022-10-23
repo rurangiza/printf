@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
+/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:49:26 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/23 09:20:45 by Arsene           ###   ########.fr       */
+/*   Updated: 2022/10/23 11:42:17 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,27 +54,28 @@ static void print_variables(char ch, va_list args, int *counter)
 	else if (ch == '%')
 		*counter += ft_putchar('%');
 	else if (ch == 'x')
-		*counter += ft_putnbr_base_u(va_arg(args, unsigned int), "0123456789abcdef");
+		ft_putnbr_base_u(va_arg(args, unsigned int), "0123456789abcdef", counter);
 	else if (ch == 'X')
-		*counter += ft_putnbr_base_u(va_arg(args, unsigned int), "0123456789ABCDEF");
+		ft_putnbr_base_u(va_arg(args, unsigned int), "0123456789ABCDEF", counter);
 	else if (ch == 'p')
 	{
 		ft_putstr("0x");
-		*counter += ft_putnbr_base_u(va_arg(args, unsigned long), "0123456789abcdef");
+		ft_putnbr_base_u(va_arg(args, unsigned long), "0123456789abcdef", counter);
+		*counter += 2;
 	}
 }
 
-#include <stdio.h>
-int main(void)
-{
-	int a = 11;
-	printf(
-		"\nLen = %d\n\n",
-		ft_printf("\nHi, %s my name is %x\n", "Arsene", a)
-	);
-	printf(
-		"\nLen = %d\n\n",
-		printf("\nHi, %s my name is %x\n", "Arsene", a)
-	);
-	return (0);
-}
+// #include <stdio.h>
+// int main(void)
+// {
+// 	int a = 11;
+// 	printf(
+// 		"\nLen = %d\n\n",
+// 		ft_printf("\nHi, %p\n", &a)
+// 	);
+// 	printf(
+// 		"\nLen = %d\n\n",
+// 		printf("\nHi, %p\n", &a)
+// 	);
+// 	return (0);
+// }
