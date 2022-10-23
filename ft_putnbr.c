@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:32:11 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/23 13:12:30 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/23 14:05:45 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,31 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int nbr)
+int	ft_putnbr(int nbr, int *counter)
 {
 	char	ch;
-	int		minus_sign;
-	
-	minus_sign = 0;
+
 	if (nbr > 9)
 	{
-		ft_putnbr((nbr / 10));
-		ft_putnbr((nbr % 10));
+		ft_putnbr((nbr / 10), counter);
+		ft_putnbr((nbr % 10), counter);
 	}
 	else if (nbr == INT_MIN)
 	{
-		ft_putstr("-2147483648");
+		return (ft_putstr("-2147483648") + *counter);
 	}
 	else if (nbr < 0)
 	{
-		minus_sign++;
+		(*counter)++;
 		ft_putchar('-');
 		nbr = -nbr;
-		ft_putnbr(nbr);
+		ft_putnbr(nbr, counter);
 	}
 	else if (nbr >= 0 && nbr < 10)
 	{
+		(*counter)++;
 		ch = nbr + '0';
 		ft_putchar(ch);
 	}
-	return (ft_nbrlen(nbr) + minus_sign);
+	return (*counter);
 }

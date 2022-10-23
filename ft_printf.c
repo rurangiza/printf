@@ -6,19 +6,19 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:49:26 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/23 13:33:47 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/23 14:17:21 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void print_variables(char ch, va_list args, int *counter);
+static void	print_variables(char ch, va_list args, int *counter);
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	va_list args;
-	int i;
-	int counter;
+	va_list	args;
+	int		i;
+	int		counter;
 
 	counter = 0;
 	va_start(args, str);
@@ -41,26 +41,29 @@ int ft_printf(const char *str, ...)
 	return (counter);
 }
 
-static void print_variables(char ch, va_list args, int *counter)
+static void	print_variables(char ch, va_list args, int *counter)
 {
 	if (ch == 'c')
 		*counter += ft_putchar(va_arg(args, int));
 	else if (ch == 's')
 		*counter += ft_putstr(va_arg(args, char *));
 	else if (ch == 'i' || ch == 'd')
-		*counter += ft_putnbr(va_arg(args, int));
+		*counter = ft_putnbr(va_arg(args, int), counter);
 	else if (ch == 'u')
 		*counter = ft_putnbr_u(va_arg(args, unsigned int), counter);
 	else if (ch == '%')
 		*counter += ft_putchar('%');
 	else if (ch == 'x')
-		ft_putnbr_base_u(va_arg(args, unsigned int), "0123456789abcdef", counter);
+		ft_putnbr_base_u(va_arg(args, unsigned int),
+			"0123456789abcdef", counter);
 	else if (ch == 'X')
-		ft_putnbr_base_u(va_arg(args, unsigned int), "0123456789ABCDEF", counter);
+		ft_putnbr_base_u(va_arg(args, unsigned int),
+			"0123456789ABCDEF", counter);
 	else if (ch == 'p')
 	{
 		ft_putstr("0x");
-		ft_putnbr_base_u(va_arg(args, unsigned long), "0123456789abcdef", counter);
+		ft_putnbr_base_u(va_arg(args, unsigned long),
+			"0123456789abcdef", counter);
 		*counter += 2;
 	}
 }
@@ -71,11 +74,11 @@ static void print_variables(char ch, va_list args, int *counter)
 // 	//int a = 11;
 // 	printf(
 // 		"\nLen = %d\n\n",
-// 		ft_printf("\n%u\n", -9)
+// 		ft_printf("\n%d\n", INT_MIN)
 // 	);
 // 	printf(
 // 		"\nLen = %d\n\n",
-// 		printf("\n%u\n", -9)
+// 		printf("\n%d\n", INT_MIN)
 // 	);
 // 	return (0);
 // }
