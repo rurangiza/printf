@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:49:26 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/23 11:42:17 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/23 13:33:47 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void print_variables(char ch, va_list args, int *counter)
 	else if (ch == 'i' || ch == 'd')
 		*counter += ft_putnbr(va_arg(args, int));
 	else if (ch == 'u')
-		*counter += ft_putnbr_u(va_arg(args, unsigned int));
+		*counter = ft_putnbr_u(va_arg(args, unsigned int), counter);
 	else if (ch == '%')
 		*counter += ft_putchar('%');
 	else if (ch == 'x')
@@ -68,14 +68,14 @@ static void print_variables(char ch, va_list args, int *counter)
 // #include <stdio.h>
 // int main(void)
 // {
-// 	int a = 11;
+// 	//int a = 11;
 // 	printf(
 // 		"\nLen = %d\n\n",
-// 		ft_printf("\nHi, %p\n", &a)
+// 		ft_printf("\n%u\n", -9)
 // 	);
 // 	printf(
 // 		"\nLen = %d\n\n",
-// 		printf("\nHi, %p\n", &a)
+// 		printf("\n%u\n", -9)
 // 	);
 // 	return (0);
 // }
