@@ -6,7 +6,7 @@
 #    By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 16:44:59 by arurangi          #+#    #+#              #
-#    Updated: 2022/10/28 13:43:19 by arurangi         ###   ########.fr        #
+#    Updated: 2022/10/28 13:56:38 by arurangi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ SRCS =		ft_printf.c \
 			ft_putnbr.c \
 			ft_putnbr_u.c \
 			ft_isalpha.c \
-			ft_ntohex.c \
-			print_variables.c
+			ft_puthex.c \
+			ft_putfs.c
 
 NAME =		libftprintf.a
 

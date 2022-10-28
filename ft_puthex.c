@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:33:02 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/28 13:46:11 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/28 13:57:01 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	ft_puthex(unsigned long nbr, char format, int *counter)
 	base = "0123456789abcdef";
 	if (nbr > 16 - 1)
 	{
-		ft_ntohex(nbr / 16, format, counter);
-		ft_ntohex(nbr % 16, format, counter);
+		ft_puthex(nbr / 16, format, counter);
+		ft_puthex(nbr % 16, format, counter);
 	}
 	else
 	{

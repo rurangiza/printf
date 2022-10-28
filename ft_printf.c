@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:49:26 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/28 13:48:06 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/28 13:56:06 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[index] == '%')
 		{
-			print_fs(str[index + 1], args, &counter);
+			ft_putfs(str[index + 1], args, &counter);
 			index++;
 		}
 		else
