@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ntohex.c                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:33:02 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/23 16:26:45 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/28 13:46:11 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * Prints integer in hexadecimal format
+*/
+
 #include "ft_printf.h"
 
-int	ft_ntohex(unsigned long nbr, char format, int *counter)
+int	ft_puthex(unsigned long nbr, char format, int *counter)
 {
 	char	ch;
 	char	*base;

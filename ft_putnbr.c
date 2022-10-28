@@ -6,12 +6,12 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:32:11 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/23 14:05:45 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/28 13:49:32 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
- * Outputs integer {nbr} to the given file descriptor {fd}
+ * Prints integer {nbr} to standard output
 */
 
 #include "ft_printf.h"

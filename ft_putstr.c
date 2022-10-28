@@ -6,12 +6,12 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:15:53 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/23 13:02:42 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/28 13:49:47 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
- * Outputs the string {str} to the given file descriptor {fd}
+ * Prints string {str} to standard output
 */
 
 #include "ft_printf.h"

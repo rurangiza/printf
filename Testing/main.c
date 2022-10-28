@@ -21,10 +21,10 @@
 int	main(void)
 {
 	//test_integer();
-	//test_strings();
+	test_strings();
 	//test_characters();
 	//test_unsigned_decimal();
-	test_itohex(INT_MAX);
+	//test_itohex(INT_MAX);
 	return (0);
 }
 

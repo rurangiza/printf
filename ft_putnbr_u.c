@@ -6,9 +6,13 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 11:50:24 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/23 13:53:07 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/28 13:49:13 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * Prints unsigned int to standard output
+*/
 
 #include "ft_printf.h"
 
