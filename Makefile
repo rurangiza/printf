@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+         #
+#    By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 16:44:59 by arurangi          #+#    #+#              #
-#    Updated: 2022/10/28 13:56:38 by arurangi         ###   ########.fr        #
+#    Updated: 2022/10/29 08:00:10 by Arsene           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,9 +32,6 @@ ${NAME} :	${OBJS}
 				ar rcs ${NAME} ${OBJS}
 
 all:		${NAME}
-
-bonus:		${OBJS}
-				ar rcs ${NAME} ${OBJS}
 
 clean:
 				${RM} ${OBJS}

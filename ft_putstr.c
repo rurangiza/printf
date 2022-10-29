@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:15:53 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/28 13:49:47 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/29 07:59:00 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,11 @@
 
 int	ft_putstr(char *str)
 {
-	int	i;
-
 	if (!str)
 	{
-		ft_putstr("(null)");
+		write(1, "(null)", 6);
 		return (6);
 	}
-	i = 0;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-	return (i);
+	write(1, str, ft_strlen(str));
+	return (ft_strlen(str));
 }
