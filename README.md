@@ -1,5 +1,5 @@
 # printf
-## How I implemented the printf() function
+## 🔖 Implementing the printf() function
 In this project, I had to implement the printf function.
 
 <code>printf()</code> is a function that helps you display text in your terminal. It is the equivalent of <code>print()</code> in __Python__ and <code>console.log()</code> in __Javascript__.
@@ -8,7 +8,7 @@ It is an essential tool for debugging and understanding what happens in your cod
 
 Re-building is not only an interresting problem to solve but also permits to better understand how it works and discover its less known capabilities.
 
-## How printf() works
+## 🔖 How printf() works
 
 You give it a string as argument and it will display the result in the terminal.
 
@@ -102,3 +102,13 @@ In the second exemple I added a variable then added three arguments in the previ
 
 And the is the main challenge in implementing a printf() like function.
 
+## 🔖 What was challenging
+### Understanding how variadic functions work
+
+- <code>va_lsit</code>
+- <code>va_start</code>
+- <code>va_arg</code>
+- <code>va_end</code>
+
+### Counting the number of characters printed
+### 
