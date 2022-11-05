@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 12:33:02 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/28 13:57:01 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/29 08:07:17 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	ft_puthex(unsigned long nbr, char format, int *counter)
 		ch = base[nbr];
 		if (format == 'X' && ft_isalpha(ch))
 			ch -= 32;
+		
 		ft_putchar(ch);
 	}
 	return (*counter);

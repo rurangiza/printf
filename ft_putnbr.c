@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:32:11 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/28 13:49:32 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/11/05 13:39:41 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_putnbr(int nbr, int *counter)
 	else if (nbr < 0)
 	{
 		(*counter)++;
-		ft_putchar('-');
+		write(1, "-", 1);
 		nbr = -nbr;
 		ft_putnbr(nbr, counter);
 	}
@@ -40,7 +40,7 @@ int	ft_putnbr(int nbr, int *counter)
 	{
 		(*counter)++;
 		ch = nbr + '0';
-		ft_putchar(ch);
+		write(1, &ch, 1);
 	}
 	return (*counter);
 }

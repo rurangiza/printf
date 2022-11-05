@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putfs.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 13:17:08 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/28 13:58:12 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/29 08:06:38 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_putfs(char ch, va_list args, int *counter)
 		ft_puthex(va_arg(args, unsigned int), ch, counter);
 	else if (ch == 'p')
 	{
-		ft_putstr("0x");
+		write(1, "0x", 2);
 		ft_puthex(va_arg(args, unsigned long), ch, counter);
 		*counter += 2;
 	}
